@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바닐라 JS로 크롬앱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="loginBox">
+        <h1>wellcome</h1>
+        <form>
+            <input type="text" id="loginId" placeholder="ID">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <input type="submit" id="loginBtn" value="Login">
+        </form>
+    </div>
+
+
+
+    <div id="wrap">
+
+
+        <span id="clock"></span>
+        <span id="weather"></span>
+
+        <div id="quotes">
+			<p class="text"></p>
+			<p class="name"></p>
+		</div>
+
+        <div id="todo">
+            <div class="todoInner">
+                <h2>Todo List</h2>
+                <form id="todoForm">
+                    <input type="text" placeholder="What are you doing today?">
+                    <input type="submit" value="➕">
+                </form>
+                <ul id="todoList"></ul>
+            </div>
+		</div>
+
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <script src="clock.js"></script>
+    <script src="quotes.js"></script>
+    <script src="weather.js"></script>
+    <script src="todo.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+@font-face {
+	font-family: 'Spoqa';
+	src: url('SpoqaHanSansNeo-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: 'Spoqa', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#loginBox {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+input {
+	padding: 0;
+}
+
+#wrap {
+	display: none;
+}
+#wrap.show {
+	display: block;
+}
+
+#loginBox.hide {
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+}
+#loginBox h1 {
+	text-align: center;
+	margin-bottom: 60px;
+	font-size: 80px;
+	color: #fff;
+	text-shadow: 1px 1px black;
+}
+#loginBox input {
+	display: block;
+	width: 400px;
+	height: 42px;
+	padding: 0 10px;
+	outline: none;
+	margin-bottom: 10px;
+     font-size: 18px;
+}
+#loginBox input[type="submit"] {
+    height: 46px;
+	margin-top: 20px;
+}
+
+#quotes {
+    width:100%;
+    position: absolute;
+	left: 50%;
+	bottom: 30px;
+	transform: translateX(-50%);
+}
+
+#quotes .text,
+#quotes .name {
+	position: relative;
+	top: -5px;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+}
+#quotes .name {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+#quotes .text.fade-in,
+#quotes .name.fade-in {
+	opacity: 1;
+	top: 0px;
+}
+
+#weather {position: absolute; right:10px; top:10px; color: #fff; font-size: 16px;}
+
+#clock {position: absolute; right:10px; top:35px; color: #fff; font-size: 16px;}
+
+#todo {width:100vw; height:88vh; display: flex; justify-content: center; align-items: center;}
+#todo .todoInner {width:60vw}
+#todo .todoInner h2 {margin-bottom: 40px; color:#fff; font-size:60px; text-align: center; text-shadow: 1px 1px #000;}
+#todoList {overflow-y:auto; max-height:340px; background:#fff; opacity: 0.8;}
+#todoForm {display: flex; justify-content: space-between; align-items: center; background:#fff; opacity: 0.8; padding:0 16px;}
+#todoForm input[type="text"] {height:58px; width:calc(100% - 30px); border:none; outline:none; padding-right:16px; font-size:16px;}
+#todoForm input[type="submit"] {width:30px; height:30px; border:none; background: #fff; cursor:pointer; font-size: 20px;}
+#todoList li {display: flex; padding:8px 16px; justify-content: space-between;}
+#todoList li ~ li {border-top: 1px solid #ededed;}
+#todoList li:last-child {padding-bottom: 16px;}
+#todoList li span {display: flex;color: #000; font-size: 16px; align-items: center;}
+#todoList li button { display: inline-block; width:30px; height:30px; background: none; border:none; padding:0; }
