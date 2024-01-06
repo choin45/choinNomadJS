@@ -1,78 +1,48 @@
-
-
 const todoForm = document.getElementById('todoForm');
-const todoFromInput = document.querySelector('#todoForm input[type=text]');
+const todoInput = document.querySelector('#todoForm input[type=text]');
 const todoList = document.getElementById('todoList');
 
+let todos = [];
+const storedTodos = localStorage.getItem('todo');
 
-
-
-
-let toDos = [];
-let todoGet = localStorage.getItem('todo')
-/* if(todoGet){
-	toDos = JSON.parse(todoGet)
-	console.log('1')
-}else{
-	toDos = [];
-	console.log('2')
-} */
-
-
-const todoSubmitFn=(e)=>{
-
+const addTodo = (e) => {
 	e.preventDefault();
-	let newTodo = todoFromInput.value;
+	const todoText = todoInput.value.trim();
+	if (todoText === '') return;
 
-    if(newTodo !== ''){
-        todoFromInput.value=""
-	
-        const newTodoObj = {
-            text : newTodo,
-            id : Date.now()
-        }
-        printTodo(newTodoObj);
-        toDos.push(newTodoObj);
-        todoSetItem();
-    }
-}
+	const newTodo = { text: todoText, id: Date.now() };
+	todos.push(newTodo);
+	updateTodoList();
+	renderTodo(newTodo);
+	todoInput.value = "";
+};
 
-const todoSetItem = (e) => {
-	localStorage.setItem('todo', JSON.stringify(toDos))
-	
-}
+const updateTodoList = () => {
+	localStorage.setItem('todo', JSON.stringify(todos));
+};
 
 const deleteTodo = (e) => {
-	const parentLi = e.target.parentNode;    
-	parentLi.remove();
-    toDos = toDos.filter(toDo => toDo.id !== Number(parentLi.id))
-    todoSetItem()
-}
+	const liToDelete = e.target.parentNode;
+	liToDelete.remove();
+	todos = todos.filter(todo => todo.id !== parseInt(liToDelete.id));
+	updateTodoList();
+};
 
-
-
-const printTodo = (todoValue) => {
+const renderTodo = (todo) => {
 	const li = document.createElement('li');
-    li.id = todoValue.id;
+	li.id = todo.id;
 	const span = document.createElement('span');
-	const btn = document.createElement('button');
-	btn.innerText = "❌";
-	span.innerText = todoValue.text;
-	li.appendChild(span);
-	li.appendChild(btn);
+	const deleteButton = document.createElement('button');
+	deleteButton.innerText = "❌";
+	deleteButton.addEventListener('click', deleteTodo);
+	span.innerText = todo.text;
+	li.append(span, deleteButton);
 	todoList.appendChild(li);
+};
 
-	btn.addEventListener('click', deleteTodo);
-}
+todoForm.addEventListener('submit', addTodo);
 
-
-
-
-
-todoForm.addEventListener('submit',todoSubmitFn )
-
-if( todoGet !== null ){
-	const parsedTodos = JSON.parse(todoGet);
-	toDos = parsedTodos;
-	parsedTodos.forEach(printTodo)
+if (storedTodos !== null) {
+	todos = JSON.parse(storedTodos);
+	todos.forEach(renderTodo);
 }
