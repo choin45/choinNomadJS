@@ -170,16 +170,16 @@ input {
 	padding: 0 10px;
 	outline: none;
 	margin-bottom: 10px;
-     font-size: 18px;
+	font-size: 18px;
 }
-#loginBox input[type="submit"] {
-    height: 46px;
+#loginBox input[type='submit'] {
+	height: 46px;
 	margin-top: 20px;
 }
 
 #quotes {
-    width:100%;
-    position: absolute;
+	width: 100%;
+	position: absolute;
 	left: 50%;
 	bottom: 30px;
 	transform: translateX(-50%);
@@ -206,19 +206,136 @@ input {
 	top: 0px;
 }
 
-#weather {position: absolute; right:10px; top:10px; color: #fff; font-size: 16px;}
+#weather {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #fff;
+	font-size: 16px;
+}
 
-#clock {position: absolute; right:10px; top:35px; color: #fff; font-size: 16px;}
+#clock {
+	position: absolute;
+	right: 10px;
+	top: 35px;
+	color: #fff;
+	font-size: 16px;
+}
 
-#todo {width:100vw; height:88vh; display: flex; justify-content: center; align-items: center;}
-#todo .todoInner {width:60vw}
-#todo .todoInner h2 {margin-bottom: 40px; color:#fff; font-size:60px; text-align: center; text-shadow: 1px 1px #000;}
-#todoList {overflow-y:auto; max-height:340px; background:#fff; opacity: 0.8;}
-#todoForm {display: flex; justify-content: space-between; align-items: center; background:#fff; opacity: 0.8; padding:0 16px;}
-#todoForm input[type="text"] {height:58px; width:calc(100% - 30px); border:none; outline:none; padding-right:16px; font-size:16px;}
-#todoForm input[type="submit"] {width:30px; height:30px; border:none; background: #fff; cursor:pointer; font-size: 20px;}
-#todoList li {display: flex; padding:8px 16px; justify-content: space-between;}
-#todoList li ~ li {border-top: 1px solid #ededed;}
-#todoList li:last-child {padding-bottom: 16px;}
-#todoList li span {display: flex;color: #000; font-size: 16px; align-items: center;}
-#todoList li button { display: inline-block; width:30px; height:30px; background: none; border:none; padding:0; }
+#todo {
+	width: 100vw;
+	height: 88vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#todo .todoInner {
+	width: 60vw;
+}
+#todo .todoInner h2 {
+	margin-bottom: 40px;
+	color: #fff;
+	font-size: 60px;
+	text-align: center;
+	text-shadow: 1px 1px #000;
+}
+#todoList {
+	overflow-y: auto;
+	max-height: 340px;
+	background: #fff;
+	opacity: 0.8;
+}
+#todoForm {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #fff;
+	opacity: 0.8;
+	padding: 0 16px;
+}
+#todoForm input[type='text'] {
+	height: 58px;
+	width: calc(100% - 30px);
+	border: none;
+	outline: none;
+	padding-right: 16px;
+	font-size: 16px;
+}
+#todoForm input[type='submit'] {
+	width: 30px;
+	height: 30px;
+	border: none;
+	background: #fff;
+	cursor: pointer;
+	font-size: 20px;
+}
+#todoList li {
+	display: flex;
+	padding: 8px 16px;
+	justify-content: space-between;
+}
+#todoList li ~ li {
+	border-top: 1px solid #ededed;
+}
+#todoList li:last-child {
+	padding-bottom: 16px;
+}
+#todoList li span {
+	display: flex;
+	color: #000;
+	font-size: 16px;
+	align-items: center;
+}
+#todoList li button {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+
+
+
+@media (max-width:768px) {
+	#loginBox h1 {
+		margin-bottom: 30px;
+		font-size: 40px;
+	}
+	#loginBox input {
+		width: 80vw;
+		height: 34px;
+		padding: 0 10px;
+		font-size: 12px;
+	}
+	#loginBox input[type='submit'] {
+		height: 38px;
+		margin-top: 15px;
+	}
+
+	#todo .todoInner h2 {
+		margin-bottom: 30px;
+		font-size: 30px;
+	}
+	#quotes .text,
+	#quotes .name {
+		font-size: 13px;
+	}
+	#quotes .name {
+		margin-top: 5px;
+		font-size: 10px;
+	}
+	#todo .todoInner {
+		width: 80vw;
+	}
+	#todoForm input[type='text'] {
+		height: 40px;
+		width: calc(100% - 30px);
+		font-size: 14px;
+	}
+	#todoList li {
+		padding: 4px 16px;
+	}
+
+}
