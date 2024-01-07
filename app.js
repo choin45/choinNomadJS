@@ -14,6 +14,8 @@ const loginBox = document.querySelector('#loginBox');
 const loginBoxForm = loginBox.querySelector('form');
 const loginId = document.querySelector('#loginId');
 const loginPassword = document.querySelector('#loginPassword');
+const greeting = document.querySelector('#greeting');
+
 
 /* 로그인 처리 */
 const handleLogin = (e) => {
@@ -42,11 +44,13 @@ const saveUsername = (username) => {
 
 /* 로그인 박스 숨기기 */
 const hideLoginBox = () => {
+    greeting.innerText = localStorage.getItem('username');
     wrap.classList.add('show');
     loginBox.classList.add('hide');
     setTimeout(() => {
         loginBox.remove();
     }, 1000);
+
 };
 
 /* 이벤트 리스너 추가 */
